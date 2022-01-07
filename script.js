@@ -9,7 +9,7 @@ body1.style.backgroundColor = "red"
 
 // Create a grid for the game, will create the divs with JS
 
-for(s = 0; s < 49; s++) {
+for(s = 0; s < 42; s++) {
     let gridDivs = document.createElement('div');
     gridDivs.className = 'slot';
     document.getElementsByClassName('game-grid')[0].appendChild(gridDivs);
