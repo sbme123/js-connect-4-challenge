@@ -4,12 +4,23 @@
   background-color: blue;
   border-radius: 50%;
   text-align: center;
+  color: white;
 }
 
 .slot p {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .pad {
   padding: 15px;
+}
+
+div {
+  border: 1px dotted red;
+  padding: 10px;
+}
+
+.slot2 {
+  border: 1px dotted red;
+  padding: 10px;
 }
