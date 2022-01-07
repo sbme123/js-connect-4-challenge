@@ -1,8 +1,8 @@
 .game-grid {
   display: flex;
   flex-wrap: wrap;
-  width: 900px;
-  height: 700px;
+  width: 700px;
+  height: 600px;
 }
 
 .slot {
@@ -14,20 +14,6 @@
   color: white;
 }
 
-.slot p {
-  padding-top: 20px;
-}
-
-.pad {
-  padding: 15px;
-}
-
-div {
-  border: 1px dotted red;
-  padding: 10px;
-}
-
-.slot2 {
-  border: 1px dotted red;
-  padding: 10px;
+slot.p {
+  margin-top: 50px;
 }
