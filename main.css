@@ -8,14 +8,10 @@
 .slot {
   height: 100px;
   width: 100px;
-  background-color: blue;
+  background-color: white;
   border-radius: 50%;
   text-align: center;
-  color: white;
-}
-
-.slot p {
-  padding-top: 20px;
+  color: red;
 }
 
 .taken {

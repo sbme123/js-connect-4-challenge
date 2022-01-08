@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const body1 = document.getElementById("test") 
 body1.style.backgroundColor = "red"
 
+
+let currentPlayer = 1
+
 // grabbing the game grid div to add the divs for the game slots / board layout
 const gameGrid = document.querySelector('.game-grid')
 
@@ -15,7 +18,7 @@ const createGameGrid = () => {
         slots.setAttribute('id', i)
         slots.innerHTML = `<p>Slot ${slots.id}</p>` 
         gameGrid.appendChild(slots) 
-        console.dir(slots)
+        // console.dir(slots)
         if (slots.id >= 35) {
             slots.className = "taken"
         } else {
@@ -28,17 +31,22 @@ createGameGrid()
 
 // Adding the onclick to identify the slots
 
-const slots = document.querySelectorAll(`.slot`) 
+const slots = document.querySelectorAll(`.slot, .taken`) 
 
 for (let i = 0; i < slots.length; i++) {
     slots[i].onclick = () => {
     
     // Connect 4 works with gravity. So if the square below your current square is taken, you can go on top of it
-       
+    if (slots[i].classList.contains('slot')) {
+        slots[i].classList.add('taken')
+        slots[i].classList.add('playerRed')
+    } else {
+
+    }
 
 
         // testign the correct slot is selected
-    alert(`You have selected slot ${i}`)
+    console.log(`You have selected slot ${i}`)
     }
 }
 
