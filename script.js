@@ -1,20 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+// Testing that it's linked
+const body1 = document.getElementById("test") 
+body1.style.backgroundColor = "red"
+
+// grabbing the game grid div to add the divs for the game slots / board layout
 const gameGrid = document.querySelector('.game-grid')
 
-// Create a grid for the game, will create the divs with JS
+
+// Create a grid for the game, will create the divs with JS rather than adding them manually
 const createGameGrid = () => {
     for(i = 0; i < 42; i++) {
-        const slot = document.createElement('div');
-        slot.setAttribute('id', i)
-        slot.className= 'slot';
-        gameGrid.appendChild(slot)
-    };
-
-    
+        const slots = document.createElement('div');
+        slots.setAttribute('id', i)
+        slots.innerHTML = `<p>Slot ${slots.id}</p>` 
+        gameGrid.appendChild(slots) 
+        console.dir(slots)
+        if (slots.id >= 35) {
+            slots.className = "taken"
+        } else {
+            slots.className = 'slot'
+        }
+    }    
 }
+
 createGameGrid()
-console.dir(gameGrid)
+
+// Adding the onclick to identify the slots
+
+const slots = document.querySelectorAll(`.slot`) 
+
+for (let i = 0; i < slots.length; i++) {
+    slots[i].onclick = () => {
+    
+    // Connect 4 works with gravity. So if the square below your current square is taken, you can go on top of it
+       
+
+
+        // testign the correct slot is selected
+    alert(`You have selected slot ${i}`)
+    }
+}
+
+
+
+
+
 
 /*
 I rewrote the for loop to create the game grid. Previous attempt was as follows: 
@@ -28,8 +59,7 @@ for(s = 0; s < 42; s++) {
 */
 
 
-const body1 = document.getElementById("test") 
-body1.style.backgroundColor = "red"
+
 
 // Conenct 4 requires two players 
 

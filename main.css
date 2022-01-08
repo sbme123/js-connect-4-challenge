@@ -14,6 +14,23 @@
   color: white;
 }
 
-slot.p {
-  margin-top: 50px;
+.slot p {
+  padding-top: 20px;
+}
+
+.taken {
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+}
+
+.playerRed {
+  background-color: red;
+}
+
+.playerYellow {
+  background-color: yellow;
 }
