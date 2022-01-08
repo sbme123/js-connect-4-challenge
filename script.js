@@ -1,3 +1,33 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+const gameGrid = document.querySelector('.game-grid')
+
+// Create a grid for the game, will create the divs with JS
+const createGameGrid = () => {
+    for(i = 0; i < 42; i++) {
+        const slot = document.createElement('div');
+        slot.setAttribute('id', i)
+        slot.className= 'slot';
+        gameGrid.appendChild(slot)
+    };
+
+    
+}
+createGameGrid()
+console.dir(gameGrid)
+
+/*
+I rewrote the for loop to create the game grid. Previous attempt was as follows: 
+for(s = 0; s < 42; s++) {
+    let gridDivs = document.createElement('div');
+    gridDivs.className = 'slot';
+    document.getElementsByClassName('game-grid').appendChild(gridDivs);
+    gridDivs.innerHTML = `<p>slot</p>`
+    console.dir(gridDivs)
+};
+*/
+
+
 const body1 = document.getElementById("test") 
 body1.style.backgroundColor = "red"
 
@@ -9,21 +39,12 @@ body1.style.backgroundColor = "red"
 
 // Start a new game
 
-// Create a grid for the game, will create the divs with JS
-
-for(s = 0; s < 42; s++) {
-    let gridDivs = document.createElement('div');
-    gridDivs.className = 'slot';
-    document.getElementsByClassName('game-grid')[0].appendChild(gridDivs);
-    gridDivs.innerHTML = `<p>slot</p>`
-    console.dir(gridDivs)
-    
-}
+// Connect the slots 
 
 
+// probably need add an onclick to the slots 
 
 
-// Need to probably add an onclick to the slots 
 
 // To win, a player will need to get 4 colours in a row 
 
@@ -34,3 +55,5 @@ for(s = 0; s < 42; s++) {
 // We'll need to keep score 
 
 // Restart the game 
+
+})
