@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const body1 = document.getElementById("test") 
 body1.style.backgroundColor = "red"
 
-
 let currentPlayer = 1
 
 // grabbing the game grid div to add the divs for the game slots / board layout
@@ -37,10 +36,20 @@ for (let i = 0; i < slots.length; i++) {
     slots[i].onclick = () => {
     
     // Connect 4 works with gravity. So if the square below your current square is taken, you can go on top of it
-    if (slots[i].classList.contains('slot')) {
+    if (slots[i].classList.contains('taken')) {
+        if (currentPlayer == 1) {
         slots[i].classList.add('taken')
         slots[i].classList.add('playerRed')
-    } else {
+        currentPlayer == 2
+    } 
+    if (currentPlayer == 2) {
+        slots[i].classList.add('taken')
+        slots[i].classList.add('playerRed')
+        currentPlayer == 2
+    }
+}
+    
+    else {
 
     }
 
@@ -51,7 +60,8 @@ for (let i = 0; i < slots.length; i++) {
 }
 
 
-
+const displayCurrentPlayer = document.getElementById("score") 
+displayCurrentPlayer.innerHTML = `<p>${currentPlayer}</p>`
 
 
 
