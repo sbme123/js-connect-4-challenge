@@ -7,7 +7,7 @@ body1.style.backgroundColor = "blue"
 // display the result 
 
 const result = document.getElementById('result')
-result.innerHTML = 'Test'
+result.innerHTML = `result:`
 
 // Display what player it is 
 const displayCurrentPlayer = document.getElementById("score") 
@@ -134,7 +134,8 @@ const checkScore = () => {
             slot3.classList.contains('playerRed') &&
             slot4.classList.contains('playerRed')
         ) {
-            result.innerHTML = "player Red Wins"
+            result.innerHTML = "result: Player Red Wins"
+            alert("PLAYER RED WINS")
         } if (
            
             slot1.classList.contains('playerYellow') &&
@@ -143,7 +144,8 @@ const checkScore = () => {
             slot4.classList.contains('playerYellow')
 
         ) {
-            result.innerHTML = "player Yellow Wins" 
+            result.innerHTML = "result: Player Yellow Wins" 
+            alert("PLAYER YELLOW WINS")
         }
     } /* END OF FOR LOOP*/
 } /* END OF CHECK SCORE FUNCTION */ 
