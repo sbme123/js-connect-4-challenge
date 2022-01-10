@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 const body1 = document.getElementById("test") 
 body1.style.backgroundColor = "blue"
 
+// display the result 
+
+const result = document.getElementById('result')
+result.innerHTML = `<p>${result}</p>`
+
 // Display what player it is 
 const displayCurrentPlayer = document.getElementById("score") 
 let currentPlayer = 1
@@ -14,7 +19,7 @@ const gameGrid = document.querySelector('.game-grid')
 
 // Hard coded winning results 
 
-const winningArrays = [
+ const winningArrays = [
     [0, 1, 2, 3],
     [41, 40, 39, 38],
     [7, 8, 9, 10],
