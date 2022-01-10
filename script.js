@@ -7,7 +7,7 @@ body1.style.backgroundColor = "blue"
 // display the result 
 
 const result = document.getElementById('result')
-result.innerHTML = `<p>${result}</p>`
+result.innerHTML = 'Test'
 
 // Display what player it is 
 const displayCurrentPlayer = document.getElementById("score") 
@@ -117,7 +117,36 @@ const slots = document.querySelectorAll(`.slot, .taken`)
 
 const checkScore = () => {
 
-}
+    // Loop to loop through the winning arrays 
+
+    for (let i = 0; i < winningArrays.length; i++) {
+        // looping into the slots array with the winnings array indexes 
+        const slot1 = slots[winningArrays[i][0]]
+        const slot2 = slots[winningArrays[i][1]]
+        const slot3 = slots[winningArrays[i][2]]
+        const slot4 = slots[winningArrays[i][3]]
+        
+        // Check the slots to see if they all hae the class of playerRed
+
+        if (
+            slot1.classList.contains('playerRed') &&
+            slot2.classList.contains('playerRed') &&
+            slot3.classList.contains('playerRed') &&
+            slot4.classList.contains('playerRed')
+        ) {
+            result.innerHTML = "player Red Wins"
+        } if (
+           
+            slot1.classList.contains('playerYellow') &&
+            slot2.classList.contains('playerYellow') &&
+            slot3.classList.contains('playerYellow') &&
+            slot4.classList.contains('playerYellow')
+
+        ) {
+            result.innerHTML = "player Yellow Wins" 
+        }
+    } /* END OF FOR LOOP*/
+} /* END OF CHECK SCORE FUNCTION */ 
 
 
 // Adding the onclick to identify the slots
@@ -142,12 +171,13 @@ for (let i = 0; i < slots.length; i++) {
         displayCurrentPlayer.innerHTML = currentPlayer 
     } 
 } else alert("Can't play here")
+checkScore()
 
         // testign the correct slot is selected
     console.log(`You have selected slot ${i}`)
     console.dir(slots[i])
     } /* END OF ONCLICK */ 
-
+  
 } /* EEND OF FOOR LOOP */ 
 
 
