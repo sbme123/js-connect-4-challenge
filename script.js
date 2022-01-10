@@ -52,11 +52,8 @@ for (let i = 0; i < slots.length; i++) {
         slots[i].classList.remove('slot')
         currentPlayer = 1
         displayCurrentPlayer.innerHTML = currentPlayer 
-    } else {
-     alert("Test")
- }
-
-    }
+    } 
+} else alert("Can't play here")
 
         // testign the correct slot is selected
     console.log(`You have selected slot ${i}`)
