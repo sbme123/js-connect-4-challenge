@@ -12,13 +12,13 @@ const gameGrid = document.querySelector('.game-grid')
 
 // Create a grid for the game, will create the divs with JS rather than adding them manually
 const createGameGrid = () => {
-    for(i = 0; i < 42; i++) {
+    for(i = 0; i < 49; i++) {
         const slots = document.createElement('div');
         slots.setAttribute('id', i)
         slots.innerHTML = `<p>Slot ${slots.id}</p>` 
         gameGrid.appendChild(slots) 
         // console.dir(slots)
-        if (slots.id >= 35) {
+        if (slots.id >= 42) {
             slots.className = "taken"
         } else {
             slots.className = 'slot'
@@ -36,22 +36,14 @@ for (let i = 0; i < slots.length; i++) {
     slots[i].onclick = () => {
     
     // Connect 4 works with gravity. So if the square below your current square is taken, you can go on top of it
-    if (slots[i].classList.contains('taken')) {
-        if (currentPlayer == 1) {
-        slots[i].classList.add('taken')
-        slots[i].classList.add('playerRed')
-        currentPlayer == 2
-    } 
-    if (currentPlayer == 2) {
-        slots[i].classList.add('taken')
-        slots[i].classList.add('playerRed')
-        currentPlayer == 2
-    }
-}
     
-    else {
-
-    }
+    if (slots[i].classList.contains('slot')) {
+        if (currentPlayer == 1) {
+        slots[i + 7].classList.add('taken')
+        slots[i].classList.add('playerRed')
+        
+    } 
+ }
 
 
         // testign the correct slot is selected
