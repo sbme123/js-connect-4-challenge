@@ -14,19 +14,10 @@
   color: red;
 }
 
-.hidden {
-  height: 100px;
-  width: 100px;
-  background-color: green;
-  border-radius: 50%;
-  text-align: center;
-  color: white;
-}
-
 .taken {
   height: 100px;
   width: 100px;
-  background-color: green;
+  color: green;
   border-radius: 50%;
   text-align: center;
   color: white;
