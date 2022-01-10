@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Testing that it's linked
 const body1 = document.getElementById("test") 
-body1.style.backgroundColor = "red"
+body1.style.backgroundColor = "blue"
 
 let currentPlayer = 1
 
@@ -37,19 +37,28 @@ for (let i = 0; i < slots.length; i++) {
     
     // Connect 4 works with gravity. So if the square below your current square is taken, you can go on top of it
     
-    if (slots[i].classList.contains('slot')) {
+    if (slots[i + 7].classList.contains('taken')) {
         if (currentPlayer == 1) {
-        slots[i + 7].classList.add('taken')
+        slots[i].classList.add('taken')
         slots[i].classList.add('playerRed')
-        
+        currentPlayer = 2
+        currentPlayer.innerHTML = currentPlayer  
     } 
+
+    } if (currentPlayer == 2) {
+        slots[i].classList.add('taken')
+        slots[i].classList.add('playerYellow')
+        currentPlayer = 1
+    } else {
+     alert("Test")
  }
 
 
         // testign the correct slot is selected
     console.log(`You have selected slot ${i}`)
-    }
-}
+    } /* END OF ONCLICK */ 
+
+} /* EEND OF FOOR LOOP */ 
 
 
 const displayCurrentPlayer = document.getElementById("score") 
